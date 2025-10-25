@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Instagram - Doritos Al</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: #fafafa;
+      font-family: Arial, sans-serif;
+      display: flex;
+      justify-content: center;
+      padding-top: 30px;
+    }
+
+    .post-container {
+      width: 100%;
+      max-width: 420px;
+      background: #fff;
+      border: 1px solid #dbdbdb;
+      border-radius: 10px;
+      overflow: hidden;
+    }
+
+    .post-header {
+      display: flex;
+      align-items: center;
+      padding: 10px;
+    }
+
+    .avatar {
+      width: 60px;
+      height: 50px;
+      margin-right: 10px;
+    }
+
+    .username {
+      font-weight: bold;
+    }
+
+    .post-img {
+      width: 100%;
+      display: block;
+    }
+
+    .post-actions {
+      padding: 10px;
+      display: flex;
+      gap: 10px;
+      align-items: center;
+      font-size: 24px;
+      user-select: none;
+    }
+
+    .post-actions span {
+      cursor: pointer;
+    }
+
+    .likes {
+      padding: 0 10px;
+      font-weight: bold;
+    }
+
+    .caption {
+      padding: 0 10px 10px;
+    }
+
+  .verified { width: 16px; margin-left: 4px; vertical-align: middle; }
+</style>
+</head>
+<body>
+  <div class="post-container">
+    <div class="post-header">
+      <img class="avatar" src="Doritos-Logo.jpg" />
+      <div class="username">doritos.al <img class="verified" src="https://upload.wikimedia.org/wikipedia/commons/e/e4/Twitter_Verified_Badge.svg" /></div>
+    </div>
+
+    <img src="kot.png" class="post-img" />
+
+    <div class="post-actions">
+      <span id="like-btn">♡</span>
+    </div>
+
+    <div class="likes" id="likes-count">167 likes</div>
+
+    <div class="caption">
+      <b>doritos.al</b> 🧡New flavour🧡Ndjesi e Re🧡
+    </div>
+  </div>
+
+  <script>
+    let liked = false;
+    let likes = 0;
+    const likeBtn = document.getElementById("like-btn");
+    const likesCount = document.getElementById("likes-count");
+
+    likeBtn.addEventListener("click", () => {
+      liked = !liked;
+      likeBtn.textContent = liked ? "❤️" : "♡";
+      likes = liked ? likes + 1 : likes - 1;
+      likesCount.textContent = likes + " likes";
+    });
+  </script>
+</body>
+</html>
